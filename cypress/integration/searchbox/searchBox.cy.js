@@ -5,9 +5,8 @@ Given("Go to url",()=>{
     cy.goUrl()
 })
 
-Given("Enter Lenovo into search box",()=>{
-    cy.searchBox("lenovo").wait(3000)
-        
+Given("Enter {string} into search box",(productname)=>{
+    cy.searchBox(productname).wait(3000)        
         
 })
 
@@ -16,7 +15,16 @@ Given("Click the search button",()=>{
         
 })
 
-Then("Verify that all the products listed includes Lenovo",()=>{
-    cy.get("[class='a-size-mini a-spacing-none a-color-base s-line-clamp-2']").wait(5000)
-        .should("contain.text","e")
+Then("Verify that all the products listed includes {string}",(productname)=>{
+    cy.get("[class='a-size-mini a-spacing-none a-color-base s-line-clamp-2']")
+         .then(function(item) { 
+            const  itemCount = Cypress.$(item).length;
+             cy.log(itemCount)
+             for(var i=0; i<itemCount; i++){
+                 cy.get("[class='a-size-mini a-spacing-none a-color-base s-line-clamp-2']")
+                 .eq(i).should('contain.text',productname)
+                
+             }
+        })
 })
+
