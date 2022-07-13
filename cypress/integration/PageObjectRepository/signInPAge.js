@@ -1,35 +1,25 @@
 class signInPage {
-
-    hellomenu(){
-        return cy.get('#nav-link-accountList')
-    }
-    
-    signin(){
-        return cy.get('#nav-flyout-ya-signin > .nav-action-button > .nav-action-inner')
-        
-    }
-
-    email(){
+    getemailbox(){
         return cy.get('#ap_email')
     }
-
+    
     emailButton(){
         return cy.get('.a-button-inner > #continue')
     }
-
-    password(){
+    
+    getpasswordbox(){
         return cy.get('#ap_password')
     }
-
-    submit(){
+    
+    getloginsubmitbutton(){
         return cy.get('#signInSubmit')
     }
-
-    validassert(){
+    
+    verifysignin(){
         return cy.get('#nav-link-accountList-nav-line-1')
     }
-
-    invalidassert(){
+    
+    getproblemmessage(){
         return cy.get('.a-alert-heading')
     }
 }
