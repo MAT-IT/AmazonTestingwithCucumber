@@ -1,20 +1,20 @@
 /// <reference types="cypress" />
 import { Given, And, Then } from "cypress-cucumber-preprocessor/steps";
-
+const AllMenu = new HomePage()
 Given("Go to url",()=>{
     cy.goUrl()
 })
 
 Given("Select All menu",()=>{
-    cy.get('#nav-hamburger-menu').click()
+    AllMenu.getAllMenu().click()
         
 })
 
 Given("Select Smart Home department",()=>{
-    cy.get('.hmenu-visible > :nth-child(9) > .hmenu-item').click()
+    AllMenu.getSmarthomelink().click()
         
 })
 
 Then("Verify the sub-categories of the Smart Home department are listed",()=>{
-    cy.get('ul[data-menu-id="7" ] a[class="hmenu-item"]').should("have.length","16")
+    AllMenu.getSmartHomesubCategories().should("have.length","16")
 })
