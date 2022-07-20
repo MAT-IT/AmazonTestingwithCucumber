@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 import { Given, And, Then } from "cypress-cucumber-preprocessor/steps";
+import HomePage from "../PageObjectRepository/HomePage"
 const AllMenu = new HomePage()
 Given("Go to url",()=>{
     cy.goUrl()

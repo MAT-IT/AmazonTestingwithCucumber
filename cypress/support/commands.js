@@ -17,8 +17,8 @@ Cypress.Commands.add("goUrl", function() {
   cy.visit(this.data.url)
 })
 
-Cypress.Commands.add("searchProduct", (input) => {
-  homepage.getsearchbar().click().wait(3000).type(input)
+Cypress.Commands.add("searchProduct", function (input)  {
+  homepage.getsearchbar().click({force: true}).parent().type(input)
   homepage.getsearchsubmitbutton().click()
 })
 

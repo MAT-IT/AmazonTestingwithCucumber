@@ -13,10 +13,10 @@ Then("get data from Fixtures",function(){
 Given("Go to url",function(){
     cy.visit(this.data.url)
 })
-Given("Verify Amazon logo is visible",()=>{
-    homepage.getamazonLogo.should("be.visible")
+// Given("Verify Amazon logo is visible",()=>{
+//     homepage.getamazonLogo.should("be.visible")
        
-})
+// })
 Given("Verify title contains Amazon",()=>{
     cy.title().should("contain","Amazon")
 })

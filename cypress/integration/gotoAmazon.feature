@@ -5,7 +5,7 @@ Feature: User should be able to access the Amazon.com page
     @focus
     Scenario: User should be able to go to Amazon website
         Given Go to url
-        Then Verify Amazon logo is visible
+        # Then Verify Amazon logo is visible
         Then Verify title contains Amazon
 
 
